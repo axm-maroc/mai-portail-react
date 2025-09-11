@@ -12,11 +12,21 @@ import { LoginPage } from '@/components/auth/LoginPage'
 // Pages
 import { Dashboard } from '@/components/pages/Dashboard'
 import { Souscriptions } from '@/components/pages/Souscriptions'
+import { NouvellesouscriptionPage } from '@/components/pages/NouvellesouscriptionPage'
 import { Conventions } from '@/components/pages/Conventions'
-import { Facturation } from '@/components/pages/Facturation'
-import Attestations from '@/components/pages/Attestations'
-import Restitutions from '@/components/pages/Restitutions'
+import FacturationSimple from '@/components/pages/FacturationSimple'
+import AttestationsSimple from '@/components/pages/AttestationsSimple'
+import RestitutionsSimple from '@/components/pages/RestitutionsSimple'
+import SuiviSalariesSimple from '@/components/pages/SuiviSalariesSimple'
 import EtatCP from '@/components/pages/EtatCP'
+
+// Nouvelles pages pour les fonctionnalités
+import NouveauProtocole from '@/components/pages/NouveauProtocole'
+import NouveauSalarie from '@/components/pages/NouveauSalarie'
+import NouveauPaiement from '@/components/pages/NouveauPaiement'
+import NouvelleAttestation from '@/components/pages/NouvelleAttestation'
+import NouvelleRestitution from '@/components/pages/NouvelleRestitution'
+import NouveauCP from '@/components/pages/NouveauCP'
 
 import './App.css'
 
@@ -51,11 +61,21 @@ function AppContent() {
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/souscriptions/*" element={<Souscriptions />} />
+              <Route path="/souscriptions/create" element={<NouvellesouscriptionPage />} />
               <Route path="/conventions/*" element={<Conventions />} />
-              <Route path="/facturation/*" element={<Facturation />} />
-              <Route path="/attestations" element={<Attestations />} />
-              <Route path="/restitutions" element={<Restitutions />} />
+              <Route path="/facturation" element={<FacturationSimple />} />
+              <Route path="/attestations" element={<AttestationsSimple />} />
+              <Route path="/restitutions" element={<RestitutionsSimple />} />
+              <Route path="/suivi-salaries" element={<SuiviSalariesSimple />} />
               <Route path="/etat-cp" element={<EtatCP />} />
+              
+              {/* Nouvelles routes pour les fonctionnalités */}
+              <Route path="/nouveau-protocole" element={<NouveauProtocole />} />
+              <Route path="/nouveau-salarie" element={<NouveauSalarie />} />
+              <Route path="/nouveau-paiement" element={<NouveauPaiement />} />
+              <Route path="/nouvelle-attestation" element={<NouvelleAttestation />} />
+              <Route path="/nouvelle-restitution" element={<NouvelleRestitution />} />
+              <Route path="/nouveau-cp" element={<NouveauCP />} />
             </Routes>
           </AppLayout>
         </ProtectedRoute>

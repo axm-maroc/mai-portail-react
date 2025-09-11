@@ -75,6 +75,19 @@ const mockData = {
       { month: 'Nov', ca: 298000, souscriptions: 115, objectif: 290000 },
       { month: 'Déc', ca: 356000, souscriptions: 135, objectif: 290000 }
     ],
+    quarterly: [
+      { period: 'Q1 2024', ca: 810000, souscriptions: 296, objectif: 870000 },
+      { period: 'Q2 2024', ca: 835000, souscriptions: 319, objectif: 870000 },
+      { period: 'Q3 2024', ca: 910000, souscriptions: 354, objectif: 870000 },
+      { period: 'Q4 2024', ca: 988000, souscriptions: 378, objectif: 870000 }
+    ],
+    yearly: [
+      { year: '2020', ca: 2100000, souscriptions: 890, objectif: 2500000 },
+      { year: '2021', ca: 2450000, souscriptions: 1020, objectif: 2500000 },
+      { year: '2022', ca: 2680000, souscriptions: 1150, objectif: 2800000 },
+      { year: '2023', ca: 2920000, souscriptions: 1280, objectif: 3200000 },
+      { year: '2024', ca: 3543000, souscriptions: 1347, objectif: 3500000 }
+    ],
     products: [
       { name: 'Injad Monde', value: 45, color: '#3b82f6', count: 401 },
       { name: 'Schengen Visa', value: 30, color: '#10b981', count: 267 },
@@ -308,7 +321,7 @@ function CustomTooltip({ active, payload, label }) {
 export function Dashboard() {
   const [isLoading, setIsLoading] = useState(true)
   const [data, setData] = useState(mockData)
-  const [selectedPeriod, setSelectedPeriod] = useState('year')
+  const [selectedPeriod, setSelectedPeriod] = useState('month')
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -319,6 +332,30 @@ export function Dashboard() {
 
     return () => clearTimeout(timer)
   }, [])
+
+  // Fonction pour obtenir les données selon la période sélectionnée
+  const getChartData = () => {
+    switch (selectedPeriod) {
+      case 'month':
+        return data.chartData.monthly
+      case 'quarter':
+        return data.chartData.quarterly.map(item => ({
+          month: item.period,
+          ca: item.ca,
+          souscriptions: item.souscriptions,
+          objectif: item.objectif
+        }))
+      case 'year':
+        return data.chartData.yearly.map(item => ({
+          month: item.year,
+          ca: item.ca,
+          souscriptions: item.souscriptions,
+          objectif: item.objectif
+        }))
+      default:
+        return data.chartData.monthly
+    }
+  }
 
   const handleRefresh = () => {
     setIsLoading(true)
@@ -454,7 +491,7 @@ export function Dashboard() {
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={300}>
-                <AreaChart data={data.chartData.monthly}>
+                <AreaChart data={getChartData()}>
                   <defs>
                     <linearGradient id="colorCA" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.3}/>
