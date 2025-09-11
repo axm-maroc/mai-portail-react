@@ -43,9 +43,9 @@ export function LoginPage() {
         <Card className="shadow-2xl border-0">
           <CardHeader className="space-y-6 pb-8">
             <div className="flex justify-center">
-              <img 
-                src={logoPortal} 
-                alt="MAI Portail" 
+              <img
+                src={logoPortal}
+                alt="MAI Portail"
                 className="h-16 w-auto"
               />
             </div>
@@ -57,8 +57,25 @@ export function LoginPage() {
                 Connectez-vous à votre espace personnel
               </CardDescription>
             </div>
+            <div>
+              <h2 className="text-lg font-bold text-gray-900">
+                Se connecter en tant que
+              </h2>
+              <div className='flex items-center justify-center'>
+                <Button
+                  onClick={() => setCredentials({ email: 'intermediaire@mai.co.ma', password: 'intermediaire123' })}
+                >
+                  Intermediaire
+                </Button>
+                <Button
+                  onClick={() => setCredentials({ email: 'entreprise@mai.co.ma', password: 'entreprise123' })}
+                >
+                  Entreprise
+                </Button>
+              </div>
+            </div>
           </CardHeader>
-          
+
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
@@ -76,7 +93,7 @@ export function LoginPage() {
                   disabled={isLoading}
                 />
               </div>
-              
+
               <div className="space-y-2">
                 <Label htmlFor="password" className="text-sm font-medium text-gray-700">
                   Mot de passe
@@ -109,8 +126,8 @@ export function LoginPage() {
                 </div>
               </div>
 
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 className="w-full h-11 bg-blue-600 hover:bg-blue-700 text-white font-medium"
                 disabled={isLoading}
               >
@@ -126,8 +143,8 @@ export function LoginPage() {
             </form>
 
             <div className="mt-6 text-center">
-              <Button 
-                variant="link" 
+              <Button
+                variant="link"
                 className="text-sm text-blue-600 hover:text-blue-800"
                 disabled={isLoading}
               >
