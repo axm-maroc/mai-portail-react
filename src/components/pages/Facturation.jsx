@@ -275,9 +275,12 @@ const Facturation = () => {
           <h1 className="text-2xl font-bold text-gray-900">Facturation et Règlement</h1>
           <p className="text-gray-600">Gestion des factures et des règlements</p>
         </div>
-        <Button className="bg-green-600 hover:bg-green-700">
+        <Button 
+          className="bg-green-600 hover:bg-green-700"
+          onClick={() => window.location.href = '/nouveau-paiement'}
+        >
           <Plus className="w-4 h-4 mr-2" />
-          Nouvelle Facture
+          Nouveau Paiement
         </Button>
       </div>
 

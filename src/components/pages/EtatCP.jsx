@@ -231,7 +231,10 @@ const EtatCP = () => {
           <h1 className="text-2xl font-bold text-gray-900">État CP (Compte de Participation)</h1>
           <p className="text-gray-600">Suivi des objectifs et commissions par agence</p>
         </div>
-        <Button className="bg-green-600 hover:bg-green-700">
+        <Button 
+          className="bg-green-600 hover:bg-green-700"
+          onClick={() => window.location.href = '/nouveau-cp'}
+        >
           <Plus className="w-4 h-4 mr-2" />
           Nouveau CP
         </Button>

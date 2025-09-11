@@ -133,7 +133,7 @@ const Conventions = () => {
                   <Button 
                     variant="outline" 
                     className="h-auto p-4 flex flex-col items-center"
-                    onClick={() => setActiveTab('protocoles')}
+                    onClick={() => window.location.href = '/nouveau-protocole'}
                   >
                     <FileText className="w-8 h-8 mb-2 text-blue-600" />
                     <span>Nouveau Protocole</span>
@@ -141,7 +141,7 @@ const Conventions = () => {
                   <Button 
                     variant="outline" 
                     className="h-auto p-4 flex flex-col items-center"
-                    onClick={() => setActiveTab('salaries')}
+                    onClick={() => window.location.href = '/nouveau-salarie'}
                   >
                     <Users className="w-8 h-8 mb-2 text-green-600" />
                     <span>Ajouter Salarié</span>

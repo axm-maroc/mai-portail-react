@@ -614,8 +614,8 @@ export function Dashboard() {
                 {[
                   { icon: FileText, label: 'Nouvelle Souscription', path: '/souscriptions/create', color: 'blue' },
                   { icon: Eye, label: 'Voir Souscriptions', path: '/souscriptions', color: 'green' },
-                  { icon: Users, label: 'Gérer Groupes', path: '/conventions/groupes', color: 'purple' },
-                  { icon: DollarSign, label: 'Facturation', path: '/facturation', color: 'orange' }
+                  { icon: Users, label: 'Nouveau Protocole', path: '/nouveau-protocole', color: 'purple' },
+                  { icon: DollarSign, label: 'Nouveau Paiement', path: '/nouveau-paiement', color: 'orange' }
                 ].map((action, index) => (
                   <motion.div key={index} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Button 

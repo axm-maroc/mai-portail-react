@@ -220,20 +220,13 @@ const Attestations = () => {
           <h1 className="text-2xl font-bold text-gray-900">Demandes d'Attestation</h1>
           <p className="text-gray-600">Gestion des demandes d'attestations d'assurance</p>
         </div>
-        <Dialog open={showNewModal} onOpenChange={setShowNewModal}>
-          <DialogTrigger asChild>
-            <Button className="bg-green-600 hover:bg-green-700">
-              <Plus className="w-4 h-4 mr-2" />
-              Nouvelle Demande
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="max-w-2xl">
-            <DialogHeader>
-              <DialogTitle>Nouvelle Demande d'Attestation</DialogTitle>
-            </DialogHeader>
-            <NewAttestationForm onSubmit={handleNewAttestation} />
-          </DialogContent>
-        </Dialog>
+        <Button 
+          className="bg-green-600 hover:bg-green-700"
+          onClick={() => window.location.href = '/nouvelle-attestation'}
+        >
+          <Plus className="w-4 h-4 mr-2" />
+          Nouvelle Demande
+        </Button>
       </div>
 
       {/* Filtres */}
