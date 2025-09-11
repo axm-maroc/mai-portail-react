@@ -182,4 +182,4 @@ const Conventions = () => {
   );
 };
 
-export default Conventions;
+export { Conventions };

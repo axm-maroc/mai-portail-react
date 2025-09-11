@@ -636,4 +636,4 @@ const Facturation = () => {
   );
 };
 
-export default Facturation;
+export { Facturation };
