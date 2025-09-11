@@ -14,9 +14,9 @@ import { Dashboard } from '@/components/pages/Dashboard'
 import { Souscriptions } from '@/components/pages/Souscriptions'
 import { Conventions } from '@/components/pages/Conventions'
 import { Facturation } from '@/components/pages/Facturation'
-import { Attestations } from '@/components/pages/Attestations'
-import { Restitutions } from '@/components/pages/Restitutions'
-import { EtatCP } from '@/components/pages/EtatCP'
+import Attestations from '@/components/pages/Attestations'
+import Restitutions from '@/components/pages/Restitutions'
+import EtatCP from '@/components/pages/EtatCP'
 
 import './App.css'
 
