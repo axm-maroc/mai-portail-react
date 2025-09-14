@@ -7,11 +7,41 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const port = process.env.PORT || 5173;
 
-// Servir les fichiers statiques du build
-app.use(express.static(path.join(__dirname, 'dist')));
+// Configuration des types MIME pour Express
+const mimeTypes = {
+  '.js': 'application/javascript',
+  '.mjs': 'application/javascript',
+  '.jsx': 'application/javascript',
+  '.ts': 'application/javascript',
+  '.tsx': 'application/javascript',
+  '.css': 'text/css',
+  '.json': 'application/json',
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.gif': 'image/gif',
+  '.svg': 'image/svg+xml',
+  '.ico': 'image/x-icon',
+  '.html': 'text/html'
+};
+
+// Servir les fichiers statiques avec configuration MIME explicite
+app.use(express.static(path.join(__dirname, 'dist'), {
+  setHeaders: (res, filePath) => {
+    const ext = path.extname(filePath).toLowerCase();
+    const mimeType = mimeTypes[ext];
+    if (mimeType) {
+      res.setHeader('Content-Type', mimeType);
+    }
+    // Ajouter des en-têtes de cache pour les assets
+    if (filePath.includes('/assets/')) {
+      res.setHeader('Cache-Control', 'public, max-age=31536000');
+    }
+  }
+}));
 
 // Gérer toutes les routes en renvoyant index.html (pour React Router)
-app.get('*', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
