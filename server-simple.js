@@ -40,14 +40,8 @@ app.use(express.static(path.join(__dirname, 'dist'), {
   }
 }));
 
-// Middleware pour gérer toutes les routes SPA
-app.use((req, res, next) => {
-  // Si c'est une requête pour un fichier statique, laisser passer
-  if (req.path.includes('.')) {
-    return next();
-  }
-  
-  // Sinon, servir index.html pour React Router
+// Gérer toutes les routes SPA - utiliser un middleware catch-all
+app.use('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 

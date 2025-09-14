@@ -40,8 +40,8 @@ app.use(express.static(path.join(__dirname, 'dist'), {
   }
 }));
 
-// Gérer toutes les routes en renvoyant index.html (pour React Router)
-app.get('/*', (req, res) => {
+// Gérer toutes les routes SPA - utiliser un middleware catch-all
+app.use('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
