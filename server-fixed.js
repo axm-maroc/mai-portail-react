@@ -10,8 +10,13 @@ const port = process.env.PORT || 5173;
 // Servir les fichiers statiques du build
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// Gérer toutes les routes en renvoyant index.html (pour React Router)
-app.get('*', (req, res) => {
+// Route pour servir index.html pour toutes les routes non-API
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
+
+// Fallback pour toutes les autres routes (SPA routing)
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 

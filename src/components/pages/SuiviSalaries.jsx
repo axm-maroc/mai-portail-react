@@ -305,7 +305,7 @@ const SuiviSalaries = () => {
             <Download className="h-4 w-4 mr-2" />
             Exporter
           </Button>
-          <Button>
+          <Button onClick={() => window.location.href = '/nouveau-salarie'}>
             <Plus className="h-4 w-4 mr-2" />
             Nouveau salarié
           </Button>

@@ -146,14 +146,14 @@ const NouveauPaiement = () => {
                     required
                   >
                     <option value="">Sélectionner une facture</option>
-                    <option value="FAC-2024-001">FAC-2024-001 - Sophie Moreau - 1 250,00 €</option>
-                    <option value="FAC-2024-002">FAC-2024-002 - Jean Dupont - 850,00 €</option>
-                    <option value="FAC-2024-003">FAC-2024-003 - Marie Martin - 2 100,00 €</option>
+                    <option value="FAC-2024-001">FAC-2024-001 - Sophie Moreau - 1 250,00 DH</option>
+                    <option value="FAC-2024-002">FAC-2024-002 - Jean Dupont - 850,00 DH</option>
+                    <option value="FAC-2024-003">FAC-2024-003 - Marie Martin - 2 100,00 DH</option>
                   </select>
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Montant (€) *
+                    Montant (DH) *
                   </label>
                   <input
                     type="number"
@@ -288,7 +288,7 @@ const NouveauPaiement = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Montant HT (€) *
+                    Montant HT (DH) *
                   </label>
                   <input
                     type="number"
@@ -319,7 +319,7 @@ const NouveauPaiement = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Montant TTC (€)
+                    Montant TTC (DH)
                   </label>
                   <input
                     type="number"
@@ -375,7 +375,7 @@ const NouveauPaiement = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Montant commission (€)
+                    Montant commission (DH)
                   </label>
                   <input
                     type="number"

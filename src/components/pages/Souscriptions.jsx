@@ -256,7 +256,7 @@ function SouscriptionRow({ souscription, onView, onEdit, onDelete, index }) {
         </div>
       </TableCell>
       <TableCell className="font-medium">
-        {souscription.montant.toLocaleString('fr-FR')} €
+        {souscription.montant.toLocaleString('fr-FR')} DH
       </TableCell>
       <TableCell>
         {new Date(souscription.echeance).toLocaleDateString('fr-FR')}
@@ -443,7 +443,7 @@ function SouscriptionsList() {
         <Card>
           <CardContent className="p-4">
             <div className="text-2xl font-bold text-blue-600">
-              {(stats.totalMontant / 1000).toFixed(0)}k €
+              {(stats.totalMontant / 1000).toFixed(0)}k DH
             </div>
             <p className="text-xs text-muted-foreground">Montant total</p>
           </CardContent>

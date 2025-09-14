@@ -196,10 +196,8 @@ const Facturation = () => {
 
   const formatCurrency = (amount) => {
     return new Intl.NumberFormat('fr-FR', {
-      style: 'currency',
-      currency: 'MAD',
       minimumFractionDigits: 2
-    }).format(amount).replace('MAD', 'DH');
+    }).format(amount) + ' DH';
   };
 
   const formatDate = (dateString) => {

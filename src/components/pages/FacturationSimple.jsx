@@ -150,8 +150,9 @@ const FacturationSimple = () => {
   const formatCurrency = (amount) => {
     return new Intl.NumberFormat('fr-FR', {
       style: 'currency',
-      currency: 'EUR'
-    }).format(amount);
+      currency: 'MAD',
+      minimumFractionDigits: 2
+    }).format(amount).replace('MAD', 'DH');
   };
 
   const getTabData = () => {

@@ -221,7 +221,7 @@ const NouveauProtocole = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Prime unitaire (€) *
+                Prime unitaire (DH) *
               </label>
               <input
                 type="number"
@@ -236,7 +236,7 @@ const NouveauProtocole = () => {
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Franchise (€)
+                Franchise (DH)
               </label>
               <input
                 type="number"
@@ -250,7 +250,7 @@ const NouveauProtocole = () => {
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Plafond (€)
+                Plafond (DH)
               </label>
               <input
                 type="number"

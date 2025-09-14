@@ -17,7 +17,7 @@ import { Conventions } from '@/components/pages/Conventions'
 import FacturationSimple from '@/components/pages/FacturationSimple'
 import AttestationsSimple from '@/components/pages/AttestationsSimple'
 import RestitutionsSimple from '@/components/pages/RestitutionsSimple'
-import SuiviSalariesSimple from '@/components/pages/SuiviSalariesSimple'
+import SuiviSalaries from '@/components/pages/SuiviSalaries'
 import EtatCP from '@/components/pages/EtatCP'
 
 // Nouvelles pages pour les fonctionnalités
@@ -64,9 +64,12 @@ function AppContent() {
               <Route path="/souscriptions/create" element={<NouvellesouscriptionPage />} />
               <Route path="/conventions/*" element={<Conventions />} />
               <Route path="/facturation" element={<FacturationSimple />} />
+              <Route path="/facturation/impayes" element={<FacturationSimple />} />
+              <Route path="/facturation/factures" element={<FacturationSimple />} />
+              <Route path="/facturation/reglements" element={<FacturationSimple />} />
               <Route path="/attestations" element={<AttestationsSimple />} />
               <Route path="/restitutions" element={<RestitutionsSimple />} />
-              <Route path="/suivi-salaries" element={<SuiviSalariesSimple />} />
+              <Route path="/suivi-salaries" element={<SuiviSalaries />} />
               <Route path="/etat-cp" element={<EtatCP />} />
               
               {/* Nouvelles routes pour les fonctionnalités */}

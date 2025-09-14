@@ -163,7 +163,10 @@ const ProtocolesGroupes = () => {
           <h1 className="text-2xl font-bold text-gray-900">Protocoles Groupes</h1>
           <p className="text-gray-600">Gestion des contrats groupes et protocoles</p>
         </div>
-        <Button className="bg-green-600 hover:bg-green-700">
+        <Button 
+          className="bg-green-600 hover:bg-green-700"
+          onClick={() => window.location.href = '/nouveau-protocole'}
+        >
           <Plus className="w-4 h-4 mr-2" />
           Nouveau Protocole
         </Button>

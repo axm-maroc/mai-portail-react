@@ -378,7 +378,7 @@ const NouvelleAttestation = () => {
           <h3 className="font-medium text-blue-900 mb-2">Informations importantes :</h3>
           <ul className="text-sm text-blue-800 space-y-1">
             <li>• Les attestations sont généralement traitées sous 2-3 jours ouvrés</li>
-            <li>• Les demandes urgentes sont traitées sous 24h (supplément de 50€)</li>
+            <li>• Les demandes urgentes sont traitées sous 24h (supplément de 50DH)</li>
             <li>• Vous recevrez un email de confirmation une fois l'attestation prête</li>
             <li>• L'attestation sera envoyée par email au format PDF</li>
           </ul>
