@@ -9,7 +9,7 @@
     "build:netlify": "npm run build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "node server-simple.js"
+    "start": "node server-fixed.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
